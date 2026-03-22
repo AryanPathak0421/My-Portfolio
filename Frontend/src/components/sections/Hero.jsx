@@ -66,7 +66,7 @@ const Hero = () => {
           variants={itemVariants}
           className="flex flex-wrap items-center justify-center gap-4"
         >
-          <Link to="/mywork">
+          <Link to="/myworks">
             <motion.button 
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
