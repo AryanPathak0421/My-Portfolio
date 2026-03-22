@@ -177,6 +177,38 @@ export const siteData = {
     }
   },
 
+  skillsPage: {
+    title: "Skills & Tools",
+    subtitle: "A comprehensive list of technologies I use to bring ideas to life.",
+    categories: [
+      {
+        name: "Languages",
+        description: "Core programming languages for logic and systems.",
+        skills: ["JavaScript", "TypeScript", "Python", "C/C++", "Java"]
+      },
+      {
+        name: "Frontend",
+        description: "Building beautiful and responsive user interfaces.",
+        skills: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "GSAP"]
+      },
+      {
+        name: "Backend",
+        description: "Scalable server-side logic and API development.",
+        skills: ["Node.js", "Express.js", "Nest.js", "Django", "PostgreSQL", "MongoDB"]
+      },
+      {
+        name: "AI / ML",
+        description: "Data science and machine learning expertise.",
+        skills: ["PyTorch", "TensorFlow", "Scikit-learn", "Pandas", "NumPy"]
+      },
+      {
+        name: "DevOps & Tools",
+        description: "Infrastructure, deployment, and development tools.",
+        skills: ["Git", "Docker", "AWS", "Vercel", "Linux"]
+      }
+    ]
+  },
+
   footer: {
     copyright: "© 2026 Aryan Pathak. Built with ❤️",
     builtWith: "React, Tailwind CSS, GSAP, Framer Motion"

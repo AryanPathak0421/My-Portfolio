@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Github, Linkedin, Twitter, Home, Briefcase, GraduationCap, FolderCode, Gamepad2, Send } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Twitter, Home, Briefcase, GraduationCap, FolderCode, Gamepad2, Send, Cpu } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
@@ -18,6 +18,7 @@ const Navbar = () => {
 
     const navLinks = [
         { title: 'Home', path: '/', icon: <Home size={20} /> },
+        { title: 'Skills', path: '/skills', icon: <Cpu size={20} /> },
         { title: 'Education', path: '/education', icon: <GraduationCap size={20} /> },
         { title: 'Experience', path: '/experience', icon: <Briefcase size={20} /> },
         { title: 'Works', path: '/myworks', icon: <FolderCode size={20} /> },

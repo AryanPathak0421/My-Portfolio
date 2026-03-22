@@ -9,6 +9,7 @@ import PlayPage from './pages/PlayPage';
 import EducationPage from './pages/EducationPage';
 import ExperiencePage from './pages/ExperiencePage';
 import ContactPage from './pages/ContactPage';
+import SkillsPage from './pages/SkillsPage';
 
 function App() {
   const location = useLocation();
@@ -22,6 +23,7 @@ function App() {
         <Route path="/education" element={<EducationPage />} />
         <Route path="/experience" element={<ExperiencePage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/skills" element={<SkillsPage />} />
       </Routes>
     </AnimatePresence>
   );
