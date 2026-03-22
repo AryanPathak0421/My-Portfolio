@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { useInView } from '../../hooks/useAnimation'
 import { siteData } from '../../data/content'
 import { fadeInVariants, slideUpVariants, staggerContainer } from '../../utils/animations'
+import { Mail, Phone, MapPin, Send } from 'lucide-react'
 
 const Contact = () => {
   const [ref, isInView] = useInView({ threshold: 0.1 })
@@ -281,7 +282,7 @@ const Contact = () => {
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '2rem'
+                gap: '2.5rem'
               }}
             >
               <div>
@@ -295,11 +296,77 @@ const Contact = () => {
                 <p style={{ 
                   color: 'var(--textColorSecondary)',
                   lineHeight: 1.6,
-                  marginBottom: '2rem'
+                  marginBottom: '2.5rem'
                 }}>
                   I'm always interested in hearing about new opportunities, exciting projects, 
                   or just having a chat about AI and technology. Feel free to reach out through any of these platforms!
                 </p>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '3rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                    <div style={{ 
+                      width: '45px', 
+                      height: '45px', 
+                      borderRadius: '12px', 
+                      background: 'rgba(168, 124, 255, 0.1)', 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'center',
+                      color: 'var(--accentColor)',
+                      border: '1px solid rgba(168, 124, 255, 0.2)'
+                    }}>
+                      <Phone size={20} />
+                    </div>
+                    <div>
+                      <p style={{ fontSize: '0.85rem', color: 'var(--textColorSecondary)', marginBottom: '2px' }}>Phone</p>
+                      <a href={`tel:${siteData.contact.phone.replace(/\s/g, '')}`} style={{ color: 'var(--textColor)', textDecoration: 'none', fontWeight: '500' }}>
+                        {siteData.contact.phone}
+                      </a>
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                    <div style={{ 
+                      width: '45px', 
+                      height: '45px', 
+                      borderRadius: '12px', 
+                      background: 'rgba(168, 124, 255, 0.1)', 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'center',
+                      color: 'var(--accentColor)',
+                      border: '1px solid rgba(168, 124, 255, 0.2)'
+                    }}>
+                      <Mail size={20} />
+                    </div>
+                    <div>
+                      <p style={{ fontSize: '0.85rem', color: 'var(--textColorSecondary)', marginBottom: '2px' }}>Email</p>
+                      <a href="mailto:aryanpathak0421@gmail.com" style={{ color: 'var(--textColor)', textDecoration: 'none', fontWeight: '500' }}>
+                        aryanpathak0421@gmail.com
+                      </a>
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                    <div style={{ 
+                      width: '45px', 
+                      height: '45px', 
+                      borderRadius: '12px', 
+                      background: 'rgba(168, 124, 255, 0.1)', 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'center',
+                      color: 'var(--accentColor)',
+                      border: '1px solid rgba(168, 124, 255, 0.2)'
+                    }}>
+                      <MapPin size={20} />
+                    </div>
+                    <div>
+                      <p style={{ fontSize: '0.85rem', color: 'var(--textColorSecondary)', marginBottom: '2px' }}>Location</p>
+                      <p style={{ color: 'var(--textColor)', margin: 0, fontWeight: '500' }}>Uttar Pradesh, India</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div>

@@ -131,22 +131,50 @@ export const siteData = {
   projects: [
     {
       id: "01",
+      title: "Clean 2 Wash",
+      category: "Full-Stack / E-commerce",
+      desc: "An on-demand car washing and e-commerce platform for booking instant car wash services and purchasing vehicle care products with a seamless user experience.",
+      tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+      image: "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&q=80&w=1200",
+      links: { github: "https://github.com/AryanPathak0421/Clean-2-Wash" }
+    },
+    {
+      id: "02",
+      title: "Hotel Ananya",
+      category: "Full-Stack / Management",
+      desc: "A smart hotel booking and management system featuring room selection, dynamic pricing, and a structured booking flow for seamless guest experiences.",
+      tech: ["React", "Express", "Node.js", "MongoDB", "Redux"],
+      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1200",
+      links: { github: "https://github.com/AryanPathak0421/Hotel-Ananya" }
+    },
+    {
+      id: "03",
       title: "VedaSaar AI",
       category: "AI / Web",
       desc: "A smart AI-powered chat interface with features like authentication, real-time interaction, and responsive UI using React, Tailwind CSS, and Axios.",
       tech: ["React", "Tailwind CSS", "Axios", "AI Integration"],
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200"
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200",
+      links: { github: "https://github.com/AryanPathak0421/VedaSaar-AI" }
     }
   ],
 
   contact: {
-    email: "your-email@example.com",
+    title: "Get in Touch",
+    description: "I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.",
+    email: "aryanpathak0421@gmail.com",
+    phone: "+91 86430 41429",
     location: "Indore, India",
     socials: [
       { name: "GitHub", url: "https://github.com/AryanPathak0421" },
-      { name: "LinkedIn", url: "#" },
-      { name: "Twitter", url: "#" }
-    ]
+      { name: "LinkedIn", url: "https://in.linkedin.com/in/aryan-pathak-904a78388" },
+      { name: "Twitter", url: "https://x.com/aryan41453" }
+    ],
+    form: {
+      name: "Your Name",
+      email: "Your Email",
+      subject: "Subject",
+      message: "Message"
+    }
   },
 
   footer: {
