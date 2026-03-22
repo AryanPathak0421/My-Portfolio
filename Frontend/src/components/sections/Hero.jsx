@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MousePointer2, Sparkles, Terminal } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { siteData } from '../../data/content';
 import heroImg from '../../assets/hero.png';
 
@@ -65,28 +66,32 @@ const Hero = () => {
           variants={itemVariants}
           className="flex flex-wrap items-center justify-center gap-4"
         >
-          <motion.button 
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="btn btn-primary px-6 py-3 text-base shadow-lg"
-          >
-            Explore My Work
-            <motion.span
-              animate={{ x: [0, 3, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
-              className="ml-2"
+          <Link to="/mywork">
+            <motion.button 
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="btn btn-primary px-6 py-3 text-base shadow-lg"
             >
-              →
-            </motion.span>
-          </motion.button>
+              Explore My Work
+              <motion.span
+                animate={{ x: [0, 3, 0] }}
+                transition={{ repeat: Infinity, duration: 1.5 }}
+                className="ml-2"
+              >
+                →
+              </motion.span>
+            </motion.button>
+          </Link>
 
-          <motion.button 
-            whileHover={{ x: 3 }}
-            className="btn btn-ghost px-6 py-3 text-base flex items-center gap-2"
-          >
-            <MousePointer2 size={18} />
-            <span className="font-semibold text-white">Watch Showreel</span>
-          </motion.button>
+          <Link to="/contact">
+            <motion.button 
+              whileHover={{ x: 3 }}
+              className="btn btn-ghost px-6 py-3 text-base flex items-center gap-2"
+            >
+              <MousePointer2 size={18} />
+              <span className="font-semibold text-white">Let's Talk</span>
+            </motion.button>
+          </Link>
         </motion.div>
 
         {/* Professional Preview Area */}
