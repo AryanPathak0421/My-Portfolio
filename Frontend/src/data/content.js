@@ -165,9 +165,9 @@ export const siteData = {
     phone: "+91 86430 41429",
     location: "Indore, India",
     socials: [
-      { name: "GitHub", url: "https://github.com/AryanPathak0421" },
-      { name: "LinkedIn", url: "https://in.linkedin.com/in/aryan-pathak-904a78388" },
-      { name: "Twitter", url: "https://x.com/aryan41453" }
+      { name: "GitHub", url: "https://github.com/AryanPathak0421", icon: "GH" },
+      { name: "LinkedIn", url: "https://in.linkedin.com/in/aryan-pathak-904a78388", icon: "LI" },
+      { name: "Twitter", url: "https://x.com/aryan41453", icon: "TW" }
     ],
     form: {
       name: "Your Name",

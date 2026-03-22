@@ -40,7 +40,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="section" ref={ref}>
-      <div className="section-container">
+      <div className="section-container" style={{ padding: '0 1rem' }}>
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -56,9 +56,9 @@ const Contact = () => {
             variants={slideUpVariants}
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
-              gap: '4rem',
-              marginTop: '4rem',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gap: '3rem',
+              marginTop: '3.5rem',
               alignItems: 'start'
             }}
           >
@@ -70,20 +70,22 @@ const Contact = () => {
                 background: 'var(--cardBackground)',
                 border: '1px solid rgba(255, 255, 255, 0.1)',
                 borderRadius: 'var(--radius-lg)',
-                padding: '2rem',
-                backdropFilter: 'blur(10px)'
+                padding: 'clamp(1.5rem, 5vw, 2.5rem)',
+                backdropFilter: 'blur(10px)',
+                width: '100%'
               }}
             >
               <form onSubmit={handleSubmit}>
-                <div className="form-group" style={{ marginBottom: '1.5rem' }}>
+                <div className="form-group" style={{ marginBottom: '1.25rem' }}>
                   <label 
                     htmlFor="name" 
                     className="form-label"
                     style={{
                       display: 'block',
-                      marginBottom: '0.5rem',
+                      marginBottom: '0.4rem',
                       color: 'var(--textColor)',
-                      fontWeight: '500'
+                      fontWeight: '500',
+                      fontSize: '0.95rem'
                     }}
                   >
                     {siteData.contact.form.name}
@@ -96,29 +98,31 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="form-input"
-                    whileFocus={{ scale: 1.02 }}
+                    whileFocus={{ scale: 1.01 }}
                     style={{
                       width: '100%',
-                      padding: '0.75rem',
+                      padding: '0.85rem',
                       background: 'rgba(255, 255, 255, 0.05)',
                       border: '1px solid rgba(255, 255, 255, 0.1)',
                       borderRadius: 'var(--radius-md)',
                       color: 'var(--textColor)',
                       fontSize: '1rem',
-                      transition: 'all 0.3s ease'
+                      transition: 'all 0.3s ease',
+                      outline: 'none'
                     }}
                   />
                 </div>
 
-                <div className="form-group" style={{ marginBottom: '1.5rem' }}>
+                <div className="form-group" style={{ marginBottom: '1.25rem' }}>
                   <label 
                     htmlFor="email" 
                     className="form-label"
                     style={{
                       display: 'block',
-                      marginBottom: '0.5rem',
+                      marginBottom: '0.4rem',
                       color: 'var(--textColor)',
-                      fontWeight: '500'
+                      fontWeight: '500',
+                      fontSize: '0.95rem'
                     }}
                   >
                     {siteData.contact.form.email}
@@ -131,29 +135,31 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="form-input"
-                    whileFocus={{ scale: 1.02 }}
+                    whileFocus={{ scale: 1.01 }}
                     style={{
                       width: '100%',
-                      padding: '0.75rem',
+                      padding: '0.85rem',
                       background: 'rgba(255, 255, 255, 0.05)',
                       border: '1px solid rgba(255, 255, 255, 0.1)',
                       borderRadius: 'var(--radius-md)',
                       color: 'var(--textColor)',
                       fontSize: '1rem',
-                      transition: 'all 0.3s ease'
+                      transition: 'all 0.3s ease',
+                      outline: 'none'
                     }}
                   />
                 </div>
 
-                <div className="form-group" style={{ marginBottom: '1.5rem' }}>
+                <div className="form-group" style={{ marginBottom: '1.25rem' }}>
                   <label 
                     htmlFor="subject" 
                     className="form-label"
                     style={{
                       display: 'block',
-                      marginBottom: '0.5rem',
+                      marginBottom: '0.4rem',
                       color: 'var(--textColor)',
-                      fontWeight: '500'
+                      fontWeight: '500',
+                      fontSize: '0.95rem'
                     }}
                   >
                     {siteData.contact.form.subject}
@@ -166,29 +172,31 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="form-input"
-                    whileFocus={{ scale: 1.02 }}
+                    whileFocus={{ scale: 1.01 }}
                     style={{
                       width: '100%',
-                      padding: '0.75rem',
+                      padding: '0.85rem',
                       background: 'rgba(255, 255, 255, 0.05)',
                       border: '1px solid rgba(255, 255, 255, 0.1)',
                       borderRadius: 'var(--radius-md)',
                       color: 'var(--textColor)',
                       fontSize: '1rem',
-                      transition: 'all 0.3s ease'
+                      transition: 'all 0.3s ease',
+                      outline: 'none'
                     }}
                   />
                 </div>
 
-                <div className="form-group" style={{ marginBottom: '2rem' }}>
+                <div className="form-group" style={{ marginBottom: '1.75rem' }}>
                   <label 
                     htmlFor="message" 
                     className="form-label"
                     style={{
                       display: 'block',
-                      marginBottom: '0.5rem',
+                      marginBottom: '0.4rem',
                       color: 'var(--textColor)',
-                      fontWeight: '500'
+                      fontWeight: '500',
+                      fontSize: '0.95rem'
                     }}
                   >
                     {siteData.contact.form.message}
@@ -199,12 +207,12 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows={5}
+                    rows={4}
                     className="form-textarea"
-                    whileFocus={{ scale: 1.02 }}
+                    whileFocus={{ scale: 1.01 }}
                     style={{
                       width: '100%',
-                      padding: '0.75rem',
+                      padding: '0.85rem',
                       background: 'rgba(255, 255, 255, 0.05)',
                       border: '1px solid rgba(255, 255, 255, 0.1)',
                       borderRadius: 'var(--radius-md)',
@@ -212,7 +220,9 @@ const Contact = () => {
                       fontSize: '1rem',
                       fontFamily: 'var(--fontFamily)',
                       resize: 'vertical',
-                      transition: 'all 0.3s ease'
+                      transition: 'all 0.3s ease',
+                      outline: 'none',
+                      minHeight: '120px'
                     }}
                   />
                 </div>
@@ -221,32 +231,39 @@ const Contact = () => {
                   type="submit"
                   className="btn btn-primary"
                   disabled={isSubmitting}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   style={{
                     width: '100%',
                     padding: '1rem',
                     fontSize: '1rem',
-                    fontWeight: '500'
+                    fontWeight: '600',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.75rem'
                   }}
                 >
                   {isSubmitting ? (
-                    <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+                    <>
                       <motion.div
                         style={{
-                          width: '20px',
-                          height: '20px',
-                          border: '2px solid var(--backgroundColor)',
-                          borderTop: '2px solid transparent',
+                          width: '18px',
+                          height: '18px',
+                          border: '2px solid rgba(255,255,255,0.3)',
+                          borderTop: '2px solid white',
                           borderRadius: '50%'
                         }}
                         animate={{ rotate: 360 }}
                         transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                       />
                       Sending...
-                    </span>
+                    </>
                   ) : (
-                    siteData.contact.form.submit
+                    <>
+                      <Send size={18} />
+                      {siteData.contact.form.submit}
+                    </>
                   )}
                 </motion.button>
 
@@ -337,12 +354,12 @@ const Contact = () => {
                       color: 'var(--accentColor)',
                       border: '1px solid rgba(168, 124, 255, 0.2)'
                     }}>
-                      <Mail size={20} />
+                      <Send size={20} />
                     </div>
                     <div>
                       <p style={{ fontSize: '0.85rem', color: 'var(--textColorSecondary)', marginBottom: '2px' }}>Email</p>
-                      <a href="mailto:aryanpathak0421@gmail.com" style={{ color: 'var(--textColor)', textDecoration: 'none', fontWeight: '500' }}>
-                        aryanpathak0421@gmail.com
+                      <a href={`mailto:${siteData.contact.email}`} style={{ color: 'var(--textColor)', textDecoration: 'none', fontWeight: '500' }}>
+                        {siteData.contact.email}
                       </a>
                     </div>
                   </div>
@@ -363,7 +380,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p style={{ fontSize: '0.85rem', color: 'var(--textColorSecondary)', marginBottom: '2px' }}>Location</p>
-                      <p style={{ color: 'var(--textColor)', margin: 0, fontWeight: '500' }}>Uttar Pradesh, India</p>
+                      <p style={{ color: 'var(--textColor)', margin: 0, fontWeight: '500' }}>{siteData.contact.location}</p>
                     </div>
                   </div>
                 </div>
@@ -382,7 +399,7 @@ const Contact = () => {
                   gap: '1rem',
                   flexWrap: 'wrap'
                 }}>
-                  {siteData.contact.social.map((social, index) => (
+                  {siteData.contact.socials.map((social, index) => (
                     <motion.a
                       key={social.name}
                       href={social.url}
@@ -399,14 +416,14 @@ const Contact = () => {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        width: '60px',
-                        height: '60px',
+                        width: '50px',
+                        height: '50px',
                         background: 'var(--cardBackground)',
                         border: '1px solid rgba(255, 255, 255, 0.1)',
                         borderRadius: '50%',
                         color: 'var(--textColor)',
                         textDecoration: 'none',
-                        fontSize: '1.5rem',
+                        fontSize: '1.2rem',
                         transition: 'all 0.3s ease',
                         position: 'relative'
                       }}
@@ -424,7 +441,7 @@ const Contact = () => {
                         }}
                         whileHover={{ opacity: 1 }}
                       />
-                      <span style={{ position: 'relative', zIndex: 1 }}>
+                      <span style={{ position: 'relative', zIndex: 1, fontWeight: 'bold' }}>
                         {social.icon}
                       </span>
                     </motion.a>
