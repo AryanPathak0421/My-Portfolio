@@ -39,7 +39,7 @@ export const siteData = {
       degree: "B.Tech in Computer Science Engineering (Data Science)",
       institution: "IPS Academy, RGPV University",
       period: "2023 - 2027",
-      score: "9.3 CGPA (till 5th Sem)",
+      score: "9.2 CGPA (till 6th Sem)",
       details: "Currently in 3rd Year. Specializing in Data Science and Full-Stack Development."
     },
     {
@@ -58,6 +58,13 @@ export const siteData = {
   ],
 
   experience: [
+    {
+      role: "Full Stack Engineer",
+      company: "RoamMyWay",
+      period: "June 2026 - Present",
+      location: "Bengaluru",
+      description: "Building and maintaining full-stack features for the RoamMyWay AI trip planning platform."
+    },
     {
       role: "Software Developer Intern",
       company: "Appzeto",
@@ -126,6 +133,20 @@ export const siteData = {
     { name: "VS Code", category: "Workflow & Tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
     { name: "Postman", category: "Workflow & Tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
     { name: "Figma", category: "Workflow & Tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" }
+  ],
+
+  gallery: [
+    { image: "/gallery/talk-1.jpg", caption: "Speaking at Avalanche Developer Academy" },
+    { image: "/gallery/talk-2.jpg", caption: "Speaking at Avalanche Developer Academy" },
+    { image: "/gallery/talk-3.jpg", caption: "Presenting to the room at Builder Hub" },
+    { image: "/gallery/coders-fest-1.jpg", caption: "Hacking away at Coder's Fest" },
+    { image: "/gallery/coders-fest-2.jpg", caption: "Coder's Fest hackathon floor" },
+    { image: "/gallery/coders-fest-3.jpg", caption: "Deep in the code at Coder's Fest" },
+    { image: "/gallery/coders-fest-4.jpg", caption: "Team debugging session at Coder's Fest" },
+    { image: "/gallery/project-demo-1.jpg", caption: "Pitching the project to the panel" },
+    { image: "/gallery/project-demo-2.jpg", caption: "Walking judges through the demo" },
+    { image: "/gallery/project-demo-3.jpg", caption: "Explaining the build to evaluators" },
+    { image: "/gallery/project-demo-4.jpg", caption: "Live project demo at the evaluation round" }
   ],
 
   projects: [

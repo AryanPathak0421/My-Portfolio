@@ -15,7 +15,7 @@ const Experience = () => {
           <span className="text-xs font-bold tracking-widest uppercase text-brand">Professional Journey</span>
         </div>
         <h2 className="text-3xl md:text-5xl font-black mb-4 leading-tight">
-          Work <span className="text-white/40 italic">Experience</span>.
+          Work <span className="text-white/40 italic font-serif">Experience</span>.
         </h2>
       </div>
 
@@ -53,6 +53,12 @@ const Experience = () => {
                         <Calendar size={14} />
                         {exp.period}
                       </span>
+                      {exp.location && (
+                        <span className="flex items-center gap-1.5 text-[11px] font-medium tracking-wide">
+                          <MapPin size={14} />
+                          {exp.location}
+                        </span>
+                      )}
                     </div>
                   </div>
                   

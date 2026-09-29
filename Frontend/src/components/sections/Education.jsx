@@ -14,7 +14,7 @@ const Education = () => {
           <span className="text-xs font-bold tracking-widest uppercase text-brand">Academic Journey</span>
         </div>
         <h2 className="text-3xl md:text-5xl font-black mb-4 leading-tight">
-          Education & <span className="text-white/40 italic">Achievements</span>.
+          Education & <span className="text-white/40 italic font-serif">Achievements</span>.
         </h2>
       </div>
 

@@ -18,7 +18,7 @@ const About = () => {
             <span className="text-xs font-bold tracking-widest uppercase text-brand">The Story</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-black mb-6 leading-tight">
-            More than just <span className="text-white/40 italic">code</span>.
+            More than just <span className="text-white/40 italic font-serif">code</span>.
           </h2>
           <p className="text-zinc-500 text-base md:text-lg leading-relaxed mb-8">
             {siteData.about.description}

@@ -20,7 +20,8 @@ const projects = [
         desc: "A smart hotel booking and management system featuring room selection, dynamic pricing, and a structured booking flow for seamless guest experiences.",
         tech: ["React", "Express", "Node.js", "MongoDB", "Redux"],
         image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1200",
-        github: "https://github.com/AryanPathak0421/Hotel-Ananya"
+        github: "https://github.com/AryanPathak0421/Hotel-Ananya",
+        link: "https://www.ananyahotelnewdigha.in/"
     },
     {
         id: "03",
@@ -67,6 +68,51 @@ const projects = [
         tech: ["Python", "Scikit-Learn", "React", "Flask", "Pandas"],
         image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=1200",
         link: "https://boxofficepredictorplus.netlify.app/"
+    },
+    {
+        id: "08",
+        title: "RoamMyWay",
+        category: "Full-Stack / Travel",
+        desc: "A premium trip-planning and booking platform offering curated itineraries, hand-picked stays, and seamless multi-city travel packages across the world.",
+        tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+        image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&q=80&w=1200",
+        link: "https://roammyway.in/"
+    },
+    {
+        id: "09",
+        title: "CLOSH",
+        category: "Full-Stack / E-commerce",
+        desc: "A fashion e-commerce platform for men, women, and kids with try-at-home delivery, quick checkout, and multi-category shopping across top brands.",
+        tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+        image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1200",
+        link: "https://www.closh.in/"
+    },
+    {
+        id: "10",
+        title: "Rozsewa",
+        category: "Full-Stack / Home Services",
+        desc: "A location-based home services marketplace that connects users with nearby verified service partners for everyday household needs.",
+        tech: ["React", "Node.js", "Express", "MongoDB", "Location API"],
+        image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=1200",
+        link: "https://rozsewa.in/"
+    },
+    {
+        id: "11",
+        title: "Mappto",
+        category: "Full-Stack / Marketplace",
+        desc: "India's workforce and materials platform — book Aadhaar-verified construction labour, staff corporate projects, buy materials on BuildMart, and manage vendor crews, all tracked and paid digitally.",
+        tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+        image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1200",
+        link: "https://laborchowck.com/"
+    },
+    {
+        id: "12",
+        title: "Saundarya Shringar",
+        category: "Full-Stack / E-commerce",
+        desc: "A cosmetics and beauty e-commerce platform offering skincare, makeup, and haircare essentials with category-based browsing and app-based shopping.",
+        tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+        image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=1200",
+        link: "https://saundaryashringar.com/"
     }
 ];
 
@@ -81,7 +127,7 @@ const WorksPage = () => {
                         className="mb-12 text-center"
                     >
                         <h1 className="text-5xl md:text-7xl font-black mb-6">
-                            All <span className="text-brand">Works</span>
+                            All <span className="text-brand italic font-serif">Works</span>
                         </h1>
                         <p className="text-zinc-400 max-w-2xl mx-auto">
                             A curated collection of my most impactful projects in AI, Web Development, and Hardware.
@@ -94,33 +140,35 @@ const WorksPage = () => {
                                 key={project.id}
                                 initial={{ opacity: 0, y: 50 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                className="group relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center glass-card p-4 bg-surface/30"
+                                viewport={{ once: true, margin: "-100px" }}
+                                className="group relative grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-8 items-center glass-card p-0 overflow-hidden bg-surface/20 hover:bg-surface/40 transition-colors duration-500 border-white/5"
                             >
-                                <div className="overflow-hidden rounded-2xl aspect-video lg:aspect-square">
+                                <div className="lg:col-span-7 overflow-hidden aspect-[4/3] relative">
+                                    <div className="absolute inset-0 bg-brand/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10" />
                                     <img
                                         src={project.image}
                                         alt={project.title}
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[20%] group-hover:grayscale-0"
                                     />
                                 </div>
 
-                                <div className="p-4 lg:p-8">
-                                    <div className="flex items-center gap-4 mb-4">
-                                        <span className="text-brand font-mono text-lg">{project.id}</span>
-                                        <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-wider text-zinc-400">
+                                <div className="lg:col-span-5 p-8 lg:p-10 relative z-20 bg-gradient-to-t from-surface via-surface/90 to-transparent lg:bg-none -mt-20 lg:mt-0">
+                                    <div className="flex items-center gap-3 mb-6">
+                                        <span className="text-brand font-mono text-xl font-black">{project.id}</span>
+                                        <div className="h-[1px] w-8 bg-brand/50" />
+                                        <span className="px-3 py-1 rounded-full bg-brand/10 border border-brand/20 text-[10px] font-bold uppercase tracking-widest text-brand-light">
                                             {project.category}
                                         </span>
                                     </div>
 
-                                    <h2 className="text-3xl md:text-5xl font-black mb-6">{project.title}</h2>
-                                    <p className="text-zinc-400 text-lg mb-8 leading-relaxed">
+                                    <h2 className="text-3xl md:text-4xl font-black mb-5 tracking-tight group-hover:text-brand transition-colors duration-300">{project.title}</h2>
+                                    <p className="text-zinc-400 text-base mb-8 leading-relaxed font-medium">
                                         {project.desc}
                                     </p>
 
                                     <div className="flex flex-wrap gap-2 mb-10">
                                         {project.tech.map(t => (
-                                            <span key={t} className="text-xs font-medium text-zinc-500 bg-white/5 px-2 py-1 rounded border border-white/5">
+                                            <span key={t} className="text-[11px] font-bold text-zinc-300 bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-md border border-white/10 transition-colors shadow-sm">
                                                 {t}
                                             </span>
                                         ))}
@@ -131,18 +179,18 @@ const WorksPage = () => {
                                             whileHover={{ scale: 1.05 }}
                                             whileTap={{ scale: 0.95 }}
                                             onClick={() => window.open(project.link || project.github, '_blank')}
-                                            className="btn-primary py-3 px-8 flex items-center gap-2"
+                                            className="btn-primary py-3 px-6 text-sm flex items-center gap-2 group/btn"
                                         >
-                                            View Project <ExternalLink size={18} />
+                                            View Project <ExternalLink size={16} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                                         </motion.button>
                                         {project.github && (
                                             <motion.button 
                                                 whileHover={{ scale: 1.1, rotate: 5 }}
                                                 whileTap={{ scale: 0.9 }}
                                                 onClick={() => window.open(project.github, '_blank')}
-                                                className="p-3 rounded-full glass hover:bg-white/10 transition-colors"
+                                                className="p-3 rounded-full glass border-white/10 hover:border-brand/50 hover:text-brand transition-all shadow-lg"
                                             >
-                                                <Github size={24} />
+                                                <Github size={20} />
                                             </motion.button>
                                         )}
                                     </div>
@@ -150,6 +198,17 @@ const WorksPage = () => {
                             </motion.div>
                         ))}
                     </div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="glass-card mt-12 p-8 md:p-10 text-center bg-surface/20 border-white/5"
+                    >
+                        <p className="text-zinc-400 text-base md:text-lg font-medium">
+                            Plus <span className="text-brand font-bold">10+ more projects</span> shipped across web, AI, and full-stack platforms — reach out to see the full portfolio.
+                        </p>
+                    </motion.div>
                 </div>
             </div>
         </Layout>

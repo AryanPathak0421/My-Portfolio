@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="section-container">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
           <div className="md:col-span-2">
-            <h2 className="text-4xl font-black mb-6">Let's build something <span className="text-brand">remarkable</span>.</h2>
+            <h2 className="text-4xl font-black mb-6">Let's build something <span className="text-brand italic font-serif">remarkable</span>.</h2>
             <p className="text-zinc-400 max-w-md mb-8">
               Open to collaborations, game-changing projects, and intelligent systems development.
             </p>

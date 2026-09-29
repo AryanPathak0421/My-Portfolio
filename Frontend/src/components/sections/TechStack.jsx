@@ -1,34 +1,44 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useMemo } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { siteData } from '../../data/content';
 import {
-  Code2,
-  Database,
   Layers,
+  Database,
   Cpu,
   Globe,
   Terminal,
-  Smartphone,
-  Workflow
+  Workflow,
+  LayoutGrid
 } from 'lucide-react';
 
 const categories = [
-  { name: 'Languages', icon: <Terminal size={20} />, color: 'text-brand' },
-  { name: 'Frontend', icon: <Globe size={20} />, color: 'text-indigo-400' },
-  { name: 'Backend', icon: <Layers size={20} />, color: 'text-emerald-400' },
-  { name: 'Database', icon: <Database size={20} />, color: 'text-amber-400' },
-  { name: 'AI/ML', icon: <Cpu size={20} />, color: 'text-purple-400' },
-  { name: 'Workflow & Tools', icon: <Workflow size={20} />, color: 'text-rose-400' },
+  { name: 'All', icon: <LayoutGrid size={16} />, color: 'text-zinc-300', glow: 'shadow-white/10' },
+  { name: 'Languages', icon: <Terminal size={16} />, color: 'text-brand', glow: 'shadow-brand/20' },
+  { name: 'Frontend', icon: <Globe size={16} />, color: 'text-indigo-400', glow: 'shadow-indigo-500/20' },
+  { name: 'Backend', icon: <Layers size={16} />, color: 'text-emerald-400', glow: 'shadow-emerald-500/20' },
+  { name: 'Database', icon: <Database size={16} />, color: 'text-amber-400', glow: 'shadow-amber-500/20' },
+  { name: 'AI/ML', icon: <Cpu size={16} />, color: 'text-purple-400', glow: 'shadow-purple-500/20' },
+  { name: 'Workflow & Tools', icon: <Workflow size={16} />, color: 'text-rose-400', glow: 'shadow-rose-500/20' },
 ];
 
 const TechStack = () => {
+  const [active, setActive] = useState('All');
+
+  const filtered = useMemo(() => {
+    if (active === 'All') return siteData.techStack;
+    return siteData.techStack.filter(t => t.category === active);
+  }, [active]);
+
+  const activeCat = categories.find(c => c.name === active);
+
   return (
     <section id="tech" className="py-8 md:py-12 relative overflow-hidden bg-surface/10">
       {/* Background radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.03)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.05)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand/5 blur-[140px] rounded-full pointer-events-none" />
 
       <div className="section-container relative z-10">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -37,75 +47,79 @@ const TechStack = () => {
           >
             <span className="text-[10px] font-bold tracking-widest uppercase text-brand">Expertise</span>
           </motion.div>
-          <h2 className="text-3xl md:text-5xl font-black mb-4">Technical <span className="text-brand">Arsenal</span></h2>
+          <h2 className="text-3xl md:text-5xl font-black mb-4">Technical <span className="text-brand italic font-serif">Arsenal</span></h2>
           <p className="text-zinc-500 max-w-xl mx-auto text-base font-medium">
-            Software, frameworks, and tools I use to build professional-grade systems.
+            {siteData.techStack.length}+ technologies I use to build professional-grade systems — pick a category to explore.
           </p>
         </div>
 
-        {/* Marquee Effect - Enhanced */}
-        <div className="mb-12 relative group">
-          <div className="flex gap-4 overflow-hidden pointer-events-none select-none relative py-4">
-            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
-            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
+        {/* Category Filter Tabs */}
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
+          {categories.map((cat) => {
+            const count = cat.name === 'All'
+              ? siteData.techStack.length
+              : siteData.techStack.filter(t => t.category === cat.name).length;
+            const isActive = active === cat.name;
+            return (
+              <button
+                key={cat.name}
+                onClick={() => setActive(cat.name)}
+                className={`relative flex items-center gap-2 px-4 py-2.5 rounded-full border text-sm font-bold tracking-tight transition-colors duration-300 ${
+                  isActive
+                    ? 'text-white border-brand/40 bg-brand/10'
+                    : 'text-zinc-500 border-white/10 bg-white/[0.02] hover:text-zinc-300 hover:border-white/20'
+                }`}
+              >
+                {isActive && (
+                  <motion.span
+                    layoutId="tech-tab-glow"
+                    className="absolute inset-0 rounded-full bg-brand/10 border border-brand/30"
+                    transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                  />
+                )}
+                <span className={`relative z-10 flex items-center gap-2 ${isActive ? 'text-brand' : cat.color}`}>
+                  {cat.icon}
+                </span>
+                <span className="relative z-10">{cat.name}</span>
+                <span className={`relative z-10 text-[10px] font-black px-1.5 py-0.5 rounded-full ${isActive ? 'bg-brand text-background' : 'bg-white/5 text-zinc-500'}`}>
+                  {count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
 
-            <motion.div
-              animate={{ x: [0, -1500] }}
-              transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
-              className="flex gap-6 whitespace-nowrap"
-            >
-              {[...siteData.techStack, ...siteData.techStack, ...siteData.techStack].map((item, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-3 px-5 py-2.5 glass rounded-2xl border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors"
-                >
-                  <div className="w-6 h-6 rounded-lg bg-brand/10 p-1 flex items-center justify-center">
-                    {item.icon ? (
-                      <img src={item.icon} alt={item.name} className="w-full h-full object-contain" />
-                    ) : (
-                      <Layers size={14} className="text-brand" />
-                    )}
-                  </div>
-                  <span className="text-base font-bold text-zinc-300 tracking-tight">{item.name}</span>
+        {/* Filtered Tech Grid */}
+        <motion.div
+          layout
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"
+        >
+          <AnimatePresence mode="popLayout">
+            {filtered.map((tech) => (
+              <motion.div
+                key={tech.name}
+                layout
+                initial={{ opacity: 0, scale: 0.85, y: 10 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.85, y: -10 }}
+                transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -6, scale: 1.04 }}
+                className={`group relative glass-card p-5 flex flex-col items-center text-center gap-3 bg-white/[0.02] hover:bg-white/[0.05] border-white/10 hover:border-brand/30 transition-colors duration-300 hover:shadow-lg ${activeCat?.glow || ''}`}
+              >
+                <div className="w-12 h-12 rounded-2xl bg-white/5 p-2.5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-inner">
+                  {tech.icon ? (
+                    <img src={tech.icon} alt={tech.name} className="w-full h-full object-contain drop-shadow-md" />
+                  ) : (
+                    <Layers size={20} className="text-brand" />
+                  )}
                 </div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Categories Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
-          {categories.map((cat, i) => (
-            <motion.div
-              key={cat.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.05 }}
-              viewport={{ once: true }}
-              className="glass-card p-5 group border-white/5 bg-white/[0.01] hover:bg-white/[0.03]"
-            >
-              <div className={`p-2.5 rounded-xl bg-white/5 inline-flex mb-4 transition-transform group-hover:scale-105 ${cat.color}`}>
-                {cat.icon}
-              </div>
-              <h3 className="text-lg font-bold mb-3">{cat.name}</h3>
-              <div className="flex flex-wrap gap-1.5">
-                {siteData.techStack
-                  .filter(tech => tech.category === cat.name)
-                  .map((tech, j) => (
-                    <span
-                      key={j}
-                      className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-white/5 border border-white/5 text-[10px] font-bold text-zinc-500 hover:text-white hover:border-brand/30 transition-all cursor-default"
-                    >
-                      {tech.icon && (
-                        <img src={tech.icon} alt={tech.name} className="w-3 h-3 object-contain" />
-                      )}
-                      {tech.name}
-                    </span>
-                  ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
+                <span className="text-xs md:text-sm font-bold text-zinc-300 group-hover:text-white tracking-tight leading-tight transition-colors">
+                  {tech.name}
+                </span>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );

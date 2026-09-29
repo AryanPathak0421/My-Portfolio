@@ -37,7 +37,7 @@ const Navbar = () => {
                     : 'py-6 bg-transparent'
                     }`}
             >
-                <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+                <div className="max-w-[1800px] mx-auto px-6 md:px-12 flex justify-between items-center">
                     {/* Logo */}
                     <Link to="/" className="group flex items-center gap-2">
                         <div className="w-10 h-10 bg-brand rounded-lg flex items-center justify-center overflow-hidden group-hover:rotate-12 transition-transform duration-300">

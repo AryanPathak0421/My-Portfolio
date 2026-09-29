@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { motion } from 'framer-motion';
 import Lenis from 'lenis';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -26,7 +27,15 @@ const Layout = ({ children }) => {
     return (
         <div className="min-h-screen">
             <Navbar />
-            <main className="main-body">{children}</main>
+            <motion.main 
+                className="main-body"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            >
+                {children}
+            </motion.main>
             <Footer />
         </div>
     );
